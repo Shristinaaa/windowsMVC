@@ -46,12 +46,28 @@
 .fa-window-maximize {
   display: none;
 }
-
 #file {
-  /* margin-left: 550px; */
+  display: none;
+}
+.menu {
+  width: 200px;
+  position: fixed;
   display: none;
 }
 
-.menu {
-  margin-left: 600px;
+.menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background-color: #ccc;
+}
+
+.menu a.active {
+  background-color: #4caf50;
+  color: white;
 }

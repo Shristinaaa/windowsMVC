@@ -5,7 +5,6 @@ desktop = {
     document.querySelector("body").style.background = val;
     console.log(val);
   }
- 
 };
 
 var menuObject = document.querySelector(".menu");
@@ -26,17 +25,8 @@ menu = {
 
     fileReader.onloadend = function() {
       var wallpaperString = "url(" + fileReader.result + ")";
-      //   var wallpaper = new desktop.changeBackground(
-      //     "url(" + fileReader.result + ")"
-      //   );
-      //   console.log(wallpaper);
 
       desktop.changeBackground(wallpaperString);
-      //   document.querySelector("body").style.background =
-      //     "url(" + fileReader.result + ")";
-      // };
-
-      //   fileReader.readAsDatRL(filename);
     };
   }
 };
