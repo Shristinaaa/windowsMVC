@@ -71,3 +71,7 @@
   background-color: #4caf50;
   color: white;
 }
+
+.hidden {
+  display: none;
+}
