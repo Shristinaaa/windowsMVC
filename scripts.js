@@ -1,7 +1,6 @@
 windowBootloader = function () {
     storedData = localStorage.getItem('windows');
     actualData = JSON.parse(storedData);
-    console.log(actualData);
     if (!!actualData) {
         actualData.forEach(function (windowData) {
             var newWindow = new ourwindow();

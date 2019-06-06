@@ -39,12 +39,20 @@ desktop = {
       newWindow.render();
       collection.objects.push(newWindow);
     })
+  },
 
-
-  }
+  // minimizeWindow: function () {
+  //   var lastWindow = collection.objects;
+  //   newWindow = new ourwindow();
+  //   console.log("Shris");
+  //   newWindow.model.left = parseInt(lastWindow.model.left) + 50 + 'px';
+  //   newWindow.
+  //   collection.objects.push(newWindow);
+  // }
 };
 
 desktop.openMenu();
 desktop.changeBg();
 desktop.render();
+
 

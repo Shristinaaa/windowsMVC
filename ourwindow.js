@@ -22,10 +22,24 @@ ourwindow = function () {
     var newThis = this;
     this.clone.style.width = "125px";
     this.clone.style.height = "45px";
-    this.clone.style.margin.top = "5px";
+    this.clone.style.top = "590px";
+    this.clone.style.left = "0px";
   };
 
-  this.maximize = function () { };
+  this.maximize = function () {
+    var newThis = this;
+    this.clone.style.width = "97vw";
+    this.clone.style.height = "97vh";
+    this.clone.style.top = "2px";
+    this.clone.style.left = "5px";
+    this.clone.classList
+    // this.style.display = "none";
+    // document.querySelector(".fa-window-maximize").style.display = "inline";
+  };
+
+  this.restore = function () {
+
+  };
 
   this.drag = function () { };
 
@@ -47,9 +61,12 @@ ourwindow = function () {
     this.clone.querySelector(".fa-window-minimize").addEventListener("click", function () {
       thisWindow.minimize();
     });
+    this.clone.querySelector(".fa-window-restore").addEventListener("click", function () {
+      thisWindow.maximize();
+    });
     $(".desktop").append(this.clone);
   };
-};
+}
 
 newWindow = new ourwindow();
 newWindow.render();
