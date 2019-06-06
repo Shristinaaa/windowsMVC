@@ -12,8 +12,12 @@ ourwindow = function () {
     },
 
     this.close = function () {
-      // console.log("oiadif");
-      // this.clone.remove();
+      var newThis = this;
+      this.clone.remove();
+      collection.objects = collection.objects.filter(function (item) {
+        return (item.model.id != newThis.model.id);
+      })
+      delete (this);
     },
 
     this.minimize = function () { },
@@ -33,12 +37,10 @@ ourwindow = function () {
       this.clone.style.zIndex = this.model['z-index'];
       this.clone.id = "random";
       this.clone.classList.remove('hidden');
-      $(".desktop").append(this.clone);
-
       this.clone.querySelector(".fa-times").addEventListener("click", function () {
-        // thisWindow.close();
-      })
-
+        thisWindow.close();
+      });
+      $(".desktop").append(this.clone);
     };
 }
 

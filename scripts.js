@@ -16,7 +16,7 @@ windowBootloader();
 
 setInterval(() => {
     collection.save();
-}, 10000);
+}, 1000);
 
 // ourwindow.dragElement(document.getElementById("window"));
 // ourwindow.minimize(document.querySelectorAll(".fa-window-minimize"));
