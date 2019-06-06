@@ -18,7 +18,12 @@ ourwindow = function () {
     delete (this);
   };
 
-  this.minimize = function () { };
+  this.minimize = function () {
+    var newThis = this;
+    this.clone.style.width = "125px";
+    this.clone.style.height = "45px";
+    this.clone.style.margin.top = "5px";
+  };
 
   this.maximize = function () { };
 
@@ -38,6 +43,9 @@ ourwindow = function () {
     this.clone.querySelector(".fa-times").addEventListener("click", function (e) {
       e.stopPropagation();
       thisWindow.close();
+    });
+    this.clone.querySelector(".fa-window-minimize").addEventListener("click", function () {
+      thisWindow.minimize();
     });
     $(".desktop").append(this.clone);
   };
