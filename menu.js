@@ -21,8 +21,6 @@ menu = {
     }
 
     fileReader.onloadend = function () {
-      console.log(fileReader.result);
-      // var wallpaper = "url(" + fileReader.result + ")";
       localStorage.setItem("background", JSON.stringify(fileReader.result));
       desktop.changeBg();
     };
