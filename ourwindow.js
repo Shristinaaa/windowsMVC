@@ -32,16 +32,47 @@ ourwindow = function () {
     this.clone.style.height = "97vh";
     this.clone.style.top = "2px";
     this.clone.style.left = "5px";
-    this.clone.classList
-    // this.style.display = "none";
-    // document.querySelector(".fa-window-maximize").style.display = "inline";
   };
 
   this.restore = function () {
 
   };
 
-  this.drag = function () { };
+  this.drag = function () {
+    dragElement(this.clone);
+    function dragElement(elmnt) {
+      var pos1 = 0,
+        pos2 = 0,
+        pos3 = 0,
+        pos4 = 0;
+      elmnt.onmousedown = dragMouseDown;
+
+      function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        elmnt.style.top = elmnt.offsetTop - pos2 + "px";
+        elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+      }
+
+      function closeDragElement() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
+  };
 
   this.render = function () {
     var thisWindow = this;
@@ -64,6 +95,7 @@ ourwindow = function () {
     this.clone.querySelector(".fa-window-restore").addEventListener("click", function () {
       thisWindow.maximize();
     });
+    thisWindow.drag();
     $(".desktop").append(this.clone);
   };
 }
