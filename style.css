@@ -21,16 +21,19 @@
 
 .fa-folder-plus {
   color: white;
-  margin-top: 400px;
+  position: relative;
+  z-index: 3;
 }
 
-.fas {
+.fas,
+.far {
   padding: 8px;
   background: #676a70;
   border-radius: 50px;
 }
 
-.fas:hover {
+.fas:hover,
+.far:hover {
   background-color: gray;
   color: black;
 }
@@ -74,4 +77,22 @@
 
 .hidden {
   display: none;
+}
+
+.minimized {
+  width: 125px !important;
+  height: 45px !important;
+  top: 91vh !important;
+}
+
+.maximized {
+  width: 97vw !important;
+  height: 97vh !important;
+  top: 2px !important;
+  left: 5px !important;
+}
+
+.restored {
+  width: 500px !important;
+  height: 600px !important;
 }

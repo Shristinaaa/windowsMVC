@@ -15,8 +15,5 @@ windowBootloader();
 
 setInterval(() => {
     collection.save();
-}, 1000);
+}, 4000);
 
-// ourwindow.dragElement(document.getElementById("window"));
-// ourwindow.minimize(document.querySelectorAll(".fa-window-minimize"));
-// ourwindow.maximize(document.querySelectorAll(".fa-window-maximize"));
